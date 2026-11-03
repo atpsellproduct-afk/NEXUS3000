@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NEXUS 3000 – Les outils IA de demain, déjà entre tes mains</title>
-<meta name="description" content="Entre dans l'orbite des meilleurs outils IA : vidéo, écriture, chatbots, SEO. Sélection triée, accès en un clic.">
+<title>NEXUS 3000 – Les meilleurs outils IA et Business en un clic</title>
+<meta name="description" content="Découvrez notre sélection des meilleurs outils IA, automatisation, SEO et crypto. Accédez aux solutions triées pour booster vos projets.">
 <meta property="og:title" content="NEXUS 3000 – L'IA de l'an 3000">
 <meta property="og:description" content="Les meilleurs outils IA, triés et à un clic.">
 <meta name="theme-color" content="#04050C">
@@ -81,6 +81,7 @@ h2.t{font-size:clamp(1.7rem,4vw,2.5rem);letter-spacing:-.01em}
 .how p{margin-top:10px;color:var(--mut);max-width:42em}
 footer{padding:50px 0 70px;color:var(--mut);font-size:.88rem}
 footer p+p{margin-top:8px}
+footer a{color:var(--cy);text-decoration:underline}
 
 @media (max-width:820px){
   .hero{grid-template-columns:1fr;min-height:0;padding-top:20px;text-align:left}
@@ -129,38 +130,46 @@ footer p+p{margin-top:8px}
 
   <footer>
     <p><strong>Transparence :</strong> certains liens de ce site sont des liens d'affiliation. Si tu t'abonnes via ces liens, on peut recevoir une commission, sans frais supplémentaires pour toi.</p>
-    <p>© <span id="y"></span> NEXUS 3000 · <a href="mailto:ton-email@exemple.com">Contact</a></p>
+    <p>© <span id="y"></span> NEXUS 3000 · Contact : <a href="mailto:atpsellproduct@gmail.com">atpsellproduct@gmail.com</a> · <a href="#" onclick="alert('Politique de confidentialité : Ce site recueille uniquement des données de navigation anonymes via GitHub Pages et utilise des liens d affiliation affiliés. Aucune donnée personnelle sensible n est collectée directement.'); return false;">Politique de confidentialité</a></p>
   </footer>
 </div>
 
 <script>
-/* ============================================================
-   ✏️ SEULE ZONE À MODIFIER
-   - domain : le site de l'outil (sert à charger son logo auto)
-   - url    : TON lien d'affiliation (remplace TON-LIEN-AFFILIE)
-   - cat    : video | ecriture | chatbot | seo | crypto
-   Vérifie les commissions sur le site de chaque programme.
-   ============================================================ */
-const CATS = { video:"Vidéo", ecriture:"Écriture", chatbot:"Chatbots", seo:"SEO", crypto:"Crypto" };
+const CATS = { 
+  video: "Vidéo & Image", 
+  ecriture: "Écriture", 
+  seo: "SEO", 
+  chatbot: "Bots & Auto", 
+  crypto: "Crypto & Finance", 
+  business: "Business & Vente" 
+};
+
 const TOOLS = [
-  { name:"Pictory",      domain:"pictory.ai",    cat:"video",    desc:"Transforme un texte ou un article en vidéo avec voix et sous-titres.",       deal:"Affiliation : ~30 % récurrent (à vérifier)",           url:"https://TON-LIEN-AFFILIE" },
-  { name:"Descript",     domain:"descript.com",  cat:"video",    desc:"Monte une vidéo ou un podcast en modifiant le texte transcrit.",             deal:"Affiliation : ~30 % récurrent (à vérifier)",           url:"https://TON-LIEN-AFFILIE" },
-  { name:"Jasper",       domain:"jasper.ai",     cat:"ecriture", desc:"Génère des textes marketing, posts et articles dans le ton de ta marque.",   deal:"Affiliation : ~30 % récurrent (à vérifier)",           url:"https://TON-LIEN-AFFILIE" },
-  { name:"Koala",        domain:"koala.sh",      cat:"seo",      desc:"Rédige des articles optimisés pour Google à partir d'un mot-clé.",           deal:"Affiliation : ~30 % récurrent (à vérifier)",           url:"https://TON-LIEN-AFFILIE" },
-  { name:"CustomGPT.ai", domain:"customgpt.ai",  cat:"chatbot",  desc:"Crée un chatbot qui répond à tes clients à partir de tes propres documents.", deal:"Affiliation : 15 à 20 % récurrent (à vérifier)",       url:"https://TON-LIEN-AFFILIE" },
-  { name:"Binance",      domain:"binance.com",   cat:"crypto",   desc:"Plateforme pour acheter, vendre et stocker des cryptomonnaies.",             deal:"Parrainage : commission sur les frais (à vérifier)",   url:"https://TON-LIEN-AFFILIE" }
+  { name: "HeyGen", domain: "heygen.com", cat: "video", desc: "Crée des avatars IA hyper-réalistes qui parlent pour tes vidéos UGC sans te montrer.", deal: "Affiliation : ~20 % récurrent", url: "https://TON-LIEN-AFFILIE" },
+  { name: "Pictory", domain: "pictory.ai", cat: "video", desc: "Transforme un texte ou un article en vidéo avec voix off et sous-titres automatiques.", deal: "Affiliation : ~30 % récurrent", url: "https://TON-LIEN-AFFILIE" },
+  { name: "InVideo", domain: "invideo.io", cat: "video", desc: "Génère des vidéos TikTok, Reels et Shorts complètes à partir d'une simple idée textuelle.", deal: "Affiliation : 25 % à 50 % récurrent", url: "https://TON-LIEN-AFFILIE" },
+  { name: "Descript", domain: "descript.com", cat: "video", desc: "Monte tes vidéos et podcasts directement en modifiant le texte de la transcription.", deal: "Affiliation : ~30 % récurrent", url: "https://TON-LIEN-AFFILIE" },
+  { name: "Leonardo AI", domain: "leonardo.ai", cat: "video", desc: "Générateur d'images, textures et assets visuels IA de très haute qualité.", deal: "Affiliation : ~20 % récurrent", url: "https://TON-LIEN-AFFILIE" },
+  { name: "ManyChat", domain: "manychat.com", cat: "chatbot", desc: "Automatisateur de messages et réponses automatiques en DM sur Instagram et TikTok.", deal: "Affiliation : 30 % à 50 % récurrent", url: "https://TON-LIEN-AFFILIE" },
+  { name: "Make", domain: "make.com", cat: "chatbot", desc: "Connecte tes applications entre elles pour automatiser tes tâches sans coder.", deal: "Affiliation : ~20 % récurrent", url: "https://TON-LIEN-AFFILIE" },
+  { name: "CustomGPT.ai", domain: "customgpt.ai", cat: "chatbot", desc: "Crée un chatbot sur-mesure capable de répondre à partir de tes propres documents.", deal: "Affiliation : 15 % à 20 % récurrent", url: "https://TON-LIEN-AFFILIE" },
+  { name: "Jasper", domain: "jasper.ai", cat: "ecriture", desc: "Génère des textes marketing, articles de blog et publications selon le ton de ta marque.", deal: "Affiliation : ~30 % récurrent", url: "https://TON-LIEN-AFFILIE" },
+  { name: "Koala", domain: "koala.sh", cat: "seo", desc: "Rédige des articles complets optimisés pour le référencement Google en un clic.", deal: "Affiliation : ~30 % récurrent", url: "https://TON-LIEN-AFFILIE" },
+  { name: "Semrush", domain: "semrush.com", cat: "seo", desc: "Outil complet pour analyser les mots-clés, la concurrence et booster ton SEO.", deal: "Affiliation : jusqu'à 200 $ / vente", url: "https://TON-LIEN-AFFILIE" },
+  { name: "Systeme.io", domain: "systeme.io", cat: "business", desc: "Crée des tunnels de vente, gère ton e-mailing et vends tes produits numériques.", deal: "Affiliation : 60 % récurrent à vie", url: "https://TON-LIEN-AFFILIE" },
+  { name: "Skool", domain: "skool.com", cat: "business", desc: "Plateforme tout-en-un pour créer, animer et monétiser une communauté payante.", deal: "Affiliation : 40 % récurrent à vie", url: "https://TON-LIEN-AFFILIE" },
+  { name: "Fiverr", domain: "fiverr.com", cat: "business", desc: "Trouve des prestataires ou propose tes services en freelance dans le monde entier.", deal: "Affiliation : Payoneer accepté", url: "https://TON-LIEN-AFFILIE" },
+  { name: "Bybit", domain: "bybit.com", cat: "crypto", desc: "Plateforme d'échange et de trading de cryptomonnaies.", deal: "Affiliation : paiement direct en USDT", url: "https://TON-LIEN-AFFILIE" },
+  { name: "Binance", domain: "binance.com", cat: "crypto", desc: "La plus grande plateforme d'achat, vente et gestion d'actifs crypto au monde.", deal: "Parrainage : commissions sur frais", url: "https://TON-LIEN-AFFILIE" }
 ];
-/* ============================================================ */
 
 const $ = id => document.getElementById(id);
 const esc = s => s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const favicon = d => `https://www.google.com/s2/favicons?domain=${d}&sz=128`;
 const slug = n => "t-" + n.toLowerCase().replace(/[^a-z0-9]+/g, "-");
-/* si le logo ne charge pas : lettre lumineuse à la place */
 window.fb = img => { const m = document.createElement("span"); m.className = "mono"; m.textContent = img.dataset.n[0]; img.replaceWith(m); };
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* ---------- OUTILS ---------- */
 let active = "all";
 function chips(){
   const all = [["all","Tout"], ...Object.entries(CATS)];
@@ -182,7 +191,6 @@ function list(){
     </li>`).join("") : `<li class="empty">Aucun outil trouvé. Essaie un autre mot ou choisis « Tout ».</li>`;
   tilt();
 }
-/* effet 3D des cartes (souris uniquement) */
 function tilt(){
   if (reduce || !matchMedia("(hover:hover)").matches) return;
   document.querySelectorAll(".card").forEach(c => {
@@ -198,7 +206,6 @@ $("q").addEventListener("input", list);
 $("y").textContent = new Date().getFullYear();
 chips(); list();
 
-/* ---------- PLANÈTE D'ICÔNES (sphère 3D) ---------- */
 (function(){
   const box = $("planet"), nodes = [], total = Math.max(18, TOOLS.length * 3);
   const glyphs = ["✦","◈","⬡","⚡","✧","◎"];
@@ -226,6 +233,7 @@ chips(); list();
   function frame(){
     const R = box.clientWidth * .42, ca = Math.cos(ay), sa = Math.sin(ay), cx = Math.cos(ax), sx = Math.sin(ax);
     if (!drag) { vel += (base - vel) * .02; ay += vel; }
+    nodes.nodes = nodes.forEach?.bind(nodes);
     nodes.forEach(n => {
       const x1 = n.x*ca + n.z*sa, z1 = -n.x*sa + n.z*ca, y2 = n.y*cx - z1*sx, z2 = n.y*sx + z1*cx;
       const d = (z2 + 1) / 2;
@@ -237,7 +245,6 @@ chips(); list();
   frame();
 })();
 
-/* ---------- ÉTOILES ---------- */
 (function(){
   const c = $("stars"), g = c.getContext("2d"); let w, h, S = [];
   function size(){ w = c.width = innerWidth; h = c.height = innerHeight; S = Array.from({length: Math.min(160, w/8)}, () => ({x:Math.random()*w, y:Math.random()*h, z:Math.random()*1.4+.2})); }
