@@ -132,6 +132,7 @@ footer a{color:var(--mg);text-decoration:underline}
 
   <footer>
     <p><strong>Transparence :</strong> certains liens de ce site sont des liens d'affiliation ou de parrainage. Si tu t'abonnes via ces liens, nous pouvons recevoir une commission, sans frais supplémentaires pour toi.</p>
+    <p id="visitor-counter" style="margin-top: 10px; color: var(--cy); font-weight: bold;">⚡ Visiteurs en orbite : <span id="count">Chargement...</span></p>
     <p>© <span id="y"></span> NEXUS STREAM · Contact : <a href="mailto:atpsellproduct@gmail.com">atpsellproduct@gmail.com</a> · <a href="#" onclick="alert('Politique de confidentialité : Ce site recueille uniquement des données de navigation anonymes via GitHub Pages et utilise des liens d affiliation. Aucune donnée personnelle sensible n est collectée directement.'); return false;">Politique de confidentialité</a></p>
   </footer>
 </div>
@@ -146,21 +147,21 @@ const CATS = {
 };
 
 const TOOLS = [
-  // --- VPN & SÉCURITÉ (Liens d'affiliation à remplacer par tes vrais liens) ---
+  // --- VPN & SÉCURITÉ ---
   { name: "NordVPN", domain: "nordvpn.com", cat: "vpn", desc: "Le VPN leader mondial pour naviguer en toute sécurité et débloquer les contenus mondiaux.", deal: "Programme Partenaire / Affiliation", url: "https://TON-LIEN-AFFILIE" },
   { name: "Surfshark", domain: "surfshark.com", cat: "vpn", desc: "VPN ultra-rapide et sécurisé avec connexions illimitées pour tous tes appareils.", deal: "Programme Partenaire / Affiliation", url: "https://TON-LIEN-AFFILIE" },
 
-  // --- FILMS & SÉRIES (Liens officiels directs) ---
+  // --- FILMS & SÉRIES ---
   { name: "Netflix", domain: "netflix.com", cat: "video", desc: "Le leader mondial des films, documentaires et séries originales en streaming.", deal: "Site Officiel", url: "https://www.netflix.com" },
   { name: "Disney+", domain: "disneyplus.com", cat: "video", desc: "Retrouve tout l'univers Disney, Pixar, Marvel, Star Wars et National Geographic.", deal: "Site Officiel", url: "https://www.disneyplus.com" },
   { name: "Prime Video", domain: "primevideo.com", cat: "video", desc: "Des milliers de films, séries à succès et retransmissions en direct.", deal: "Site Officiel", url: "https://www.primevideo.com" },
   { name: "Crunchyroll", domain: "crunchyroll.com", cat: "anime", desc: "La plus grande bibliothèque d'animes et mangas en streaming HD.", deal: "Site Officiel", url: "https://www.crunchyroll.com" },
   
-  // --- MUSIQUE & AUDIO (Liens officiels directs) ---
+  // --- MUSIQUE & AUDIO ---
   { name: "Spotify", domain: "spotify.com", cat: "musique", desc: "Écoute des millions de titres, podcasts et albums musicaux partout.", deal: "Site Officiel", url: "https://www.spotify.com" },
   { name: "Deezer", domain: "deezer.com", cat: "musique", desc: "Service de streaming musical avec un son haute fidélité et des recommandations sur-mesure.", deal: "Site Officiel", url: "https://www.deezer.com" },
   
-  // --- GAMING & LIVE (Lien officiel direct) ---
+  // --- GAMING & LIVE ---
   { name: "Twitch", domain: "twitch.tv", cat: "gaming", desc: "La plateforme de streaming live de référence pour le jeu vidéo et les créateurs de contenu.", deal: "Site Officiel", url: "https://www.twitch.tv" }
 ];
 
@@ -206,6 +207,32 @@ function tilt(){
 $("q").addEventListener("input", list);
 $("y").textContent = new Date().getFullYear();
 chips(); list();
+
+/* --- COMPTEUR DE VISITEURS EN TEMPS RÉEL --- */
+(function() {
+  const namespace = "nexus-stream-site-atp"; 
+  const key = "visits";
+  const apiUrl = `https://api.counterapi.dev/v1/${namespace}/${key}/up`;
+
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      let views = data.count;
+      const counterEl = document.getElementById("count");
+      if (counterEl) {
+        if (views >= 10000) {
+          counterEl.textContent = "🔥 Déjà plus de 10K visiteurs ! (" + views.toLocaleString() + ")";
+        } else {
+          counterEl.textContent = views.toLocaleString();
+        }
+      }
+    })
+    .catch(error => {
+      console.log("Erreur du compteur :", error);
+      const counterEl = document.getElementById("count");
+      if (counterEl) counterEl.textContent = "Actif";
+    });
+})();
 
 (function(){
   const box = $("planet"), nodes = [], total = Math.max(18, TOOLS.length * 3);
